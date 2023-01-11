@@ -1,21 +1,21 @@
 <?php
 error_reporting(0);
-
+setlocale( LC_TIME, 'ru_RU', 'russian' );
 /*
 * Получаем текущий час в виде строки от 00 до 23
 * и приводим строку к целому числу от 0 до 23
 */
-$hour = (int) strftime('%H');
+$hour = (int) strftime('%H')+3;
 $welcome = ''; // Инициализируем переменную для приветствия
 if ($hour<6) $welcome = 'Доброй ночи';
 elseif ($hour<12) $welcome = 'Доброе утро';
 elseif ($hour<18) $welcome = 'Добрый день';
 elseif ($hour<24) $welcome = 'Добрый вечер';
 else $welcome = 'Доброй ночи';
-
+echo  $hour;
 // Установка локали и выбор значений даты
 
-setlocale( LC_TIME, 'ru_RU', 'russian' );
+
 $day = strftime('%d');
 $mon = iconv("windows-1251", "utf-8", strftime('%B'));
 $year = strftime('%Y');
